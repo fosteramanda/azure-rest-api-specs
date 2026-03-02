@@ -332,14 +332,19 @@ enum ImmutabilityPolicySetting {
 @@clientName(BlobItem.objectReplicationMetadata, "OrMetadata", "go");
 @@clientName(BlobServiceProperties, "StorageServiceProperties", "go");
 @@clientName(BlobServiceProperties.cors, "CORS", "go");
-@@clientName(ContainerItem.delete, "deleted", "go");
 @@clientName(CopyStatus, "CopyStatusType", "go");
 @@clientName(CorsRule, "CORSRule", "go");
 @@clientName(Error, "StorageError", "go");
 @@clientName(EncryptionAlgorithmTypeGo, "EncryptionAlgorithmType", "go");
 @@clientName(GeoReplicationStatusType, "BlobGeoReplicationStatus", "go");
-@@clientName(ImmutabilityPolicyExpiresOnResponseHeader.immutabilityPolicyUntilDate, "ImmutabilityPolicyExpiry", "go");
-@@clientName(ImmutabilityPolicyExpiresOnResponseHeaderPrivate.immutabilityPolicyUntilDate, "ImmutabilityPolicyExpiry", "go");
+@@clientName(ImmutabilityPolicyExpiresOnResponseHeader.immutabilityPolicyUntilDate,
+  "ImmutabilityPolicyExpiry",
+  "go"
+);
+@@clientName(ImmutabilityPolicyExpiresOnResponseHeaderPrivate.immutabilityPolicyUntilDate,
+  "ImmutabilityPolicyExpiry",
+  "go"
+);
 @@clientName(ListBlobsIncludeItemGo, "ListBlobsIncludeItem", "go");
 @@clientName(ListBlobsResponse, "ListBlobsFlatSegmentResponse", "go");
 @@clientName(Metrics.includeApis, "IncludeAPIs", "go");
@@ -419,7 +424,6 @@ enum ImmutabilityPolicySetting {
 @@scope(Storage.Blob.PageBlob.getPageRangesDiff, "!rust");
 
 @@clientName(Storage.Blob.ContainerProperties.eTag, "etag", "python");
-@@clientName(Storage.Blob.ContainerItem.delete, "deleted", "python");
 
 @@alternateType(Storage.Blob.UserDelegationKey.signedStart, string, "python");
 @@alternateType(Storage.Blob.UserDelegationKey.signedExpiry, string, "python");
@@ -478,7 +482,6 @@ op setImmutabilityPolicyOptionalExpiry is StorageOperationNoBody<
 @@clientName(SignedIdentifiers, "BlobSignedIdentifiers", "csharp");
 @@clientName(LeaseDuration, "LeaseDurationType", "csharp");
 @@clientName(BlobItem.objectReplicationMetadata, "OrMetadata", "csharp");
-@@clientName(ContainerItem.delete, "deleted", "csharp");
 @@clientName(Blob.setProperties, "SetHttpHeaders", "csharp");
 @@clientName(ListBlobsResponse, "ListBlobsFlatSegmentResponse", "csharp");
 @@clientName(Container.findBlobsByTags, "FilterBlobs", "csharp");
@@ -490,11 +493,21 @@ op setImmutabilityPolicyOptionalExpiry is StorageOperationNoBody<
 @@access(BlobProperties, Access.internal, "csharp");
 @@access(BlobItem, Access.internal, "csharp");
 
-@@clientOption(MetadataHeaders.`metadata`, "collectionHeaderPrefix", "x-ms-meta-", "csharp");
+@@clientOption(MetadataHeaders.metadata,
+  "collectionHeaderPrefix",
+  "x-ms-meta-",
+  "csharp"
+);
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Disabling pageable in favor of custom pageable implementation in client"
-@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Container.listBlobs, "csharp");
+@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Container.listBlobs,
+  "csharp"
+);
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Disabling pageable in favor of custom pageable implementation in client"
-@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Container.listBlobHierarchySegment, "csharp");
+@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Container.listBlobHierarchySegment,
+  "csharp"
+);
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Disabling pageable in favor of custom pageable implementation in client"
-@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Service.listContainers, "csharp");
+@@Azure.ClientGenerator.Core.Legacy.disablePageable(Storage.Blob.Service.listContainers,
+  "csharp"
+);
