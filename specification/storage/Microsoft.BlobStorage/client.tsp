@@ -455,7 +455,7 @@ op setImmutabilityPolicyOptionalExpiry is StorageOperationNoBody<
 
 @@override(Storage.Blob.Blob.setImmutabilityPolicy,
   setImmutabilityPolicyOptionalExpiry,
-  "python,csharp,javascript"
+  "python,csharp"
 );
 
 // C# customizations
